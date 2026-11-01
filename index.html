@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- NED-TRAFFIC -->
+  <title>Filter Jam – Free Sliding Block Puzzle Game (40 Levels) | Ned Games</title>
+  <meta name="description" content="Play Filter Jam free in your browser. Slide the filter boxes out of the way and get the NED box out the van door. 40 sliding block puzzles from easy to brain-melting. No download, no sign-up.">
+  <link rel="canonical" href="https://filterjam.nedwebservices.com/">
+  <meta name="theme-color" content="#1d2a36">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Filter Jam">
+  <meta property="og:title" content="Filter Jam – Free Sliding Block Puzzle">
+  <meta property="og:description" content="The delivery van is jammed. Slide the filter boxes and get the NED box out the door. 40 free levels.">
+  <meta property="og:url" content="https://filterjam.nedwebservices.com/">
+  <meta property="og:image" content="https://filterjam.nedwebservices.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Filter Jam – Free Sliding Block Puzzle">
+  <meta name="twitter:description" content="The delivery van is jammed. Slide the filter boxes and get the NED box out the door. 40 free levels.">
+  <meta name="twitter:image" content="https://filterjam.nedwebservices.com/og-image.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Archivo+Black&display=swap">
+  <link rel="stylesheet" href="style.css?v=2">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoGame","name":"Filter Jam","url":"https://filterjam.nedwebservices.com/","description":"Free sliding block puzzle with 40 levels. Slide the filter boxes out of the way and get the NED box out the van door.","genre":["Puzzle","Sliding block puzzle"],"gamePlatform":"Web browser","applicationCategory":"Game","operatingSystem":"Any","image":"https://filterjam.nedwebservices.com/og-image.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Ned Games","url":"https://games.nedwebservices.com/"}}
+  </script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <p class="kicker">Ned Games · Sliding block puzzle</p>
+    <h1>Filter Jam</h1>
+    <p class="tagline">The delivery van is jammed. Slide the filters and get the <b>NED box</b> out the door.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="game" aria-label="Game">
+      <div class="toolbar" role="toolbar" aria-label="Game controls">
+        <span class="stat">Level <b id="levelNum">1</b></span>
+        <span class="stat">Par <b id="parNum">–</b></span>
+        <span class="stat">Moves <b id="moveCount">0</b></span>
+      </div>
+      <div class="board-wrap">
+        <div class="board" id="board" aria-label="Van floor, 6 by 6. The door is on the right side of the third row.">
+          <div class="door" aria-hidden="true"><span>DOOR</span></div>
+        </div>
+      </div>
+      <div class="controls" role="toolbar" aria-label="Moves">
+        <button class="btn" id="undoBtn" type="button">↶ Undo</button>
+        <button class="btn" id="restartBtn" type="button">↻ Restart</button>
+        <button class="btn" id="hintBtn" type="button">💡 Hint</button>
+        <button class="btn primary" id="levelsBtn" type="button">Levels</button>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite">Drag a box along its track. Boxes only slide the way they're facing.</p>
+    </section>
+
+    <section class="info">
+      <h2>How to play Filter Jam</h2>
+      <ol>
+        <li>The <b>blue NED box</b> needs to leave through the van door on the right.</li>
+        <li>Drag any box to slide it. Wide boxes slide left and right; tall boxes slide up and down. Nothing can jump over anything.</li>
+        <li>Clear a path, then slide the NED box out the door.</li>
+        <li>Each slide counts as one move, however far it goes. Match <b>par</b> (the fewest moves possible) for 3 stars.</li>
+      </ol>
+      <p>Keyboard: press Tab to pick a box, then use the arrow keys to slide it.</p>
+
+      <h2>Tips</h2>
+      <ul>
+        <li>Work backward: find the box blocking the door, then ask what's blocking <i>that</i> box.</li>
+        <li>Tall boxes in the door row are the usual troublemakers. Look for where they can fit above or below.</li>
+        <li>Stuck? <b>Hint</b> shows the next best move, and <b>Undo</b> takes back as many moves as you like.</li>
+      </ul>
+
+      <h2>About Filter Jam</h2>
+      <p>Filter Jam is a free sliding block puzzle in the style of classic traffic-jam puzzles, with 40 levels that start easy and end very hard. Every level was checked by a computer solver, so par is the true minimum. It works on phones, tablets and computers with no download and no sign-up, and your progress is saved in your browser.</p>
+      <p>It's made by <a href="https://games.nedwebservices.com/">Ned Games</a> and inspired by real delivery days at <a href="https://www.nedairfilters.com/">Ned Air Filters</a> in San Antonio, where a van full of AC filters really can get jammed.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p><a href="https://games.nedwebservices.com/">More free games at Ned Games</a> · <a href="privacy.html">Privacy</a></p>
+    <p>Need real AC filters? <a href="https://www.nedairfilters.com/">Ned Air Filters</a> delivers.</p>
+    <p class="copy">© 2026 Ned Games · Ned Web Services</p>
+  </footer>
+
+  <dialog class="modal" id="winModal" aria-labelledby="winTitle">
+    <h2 id="winTitle">Delivered!</h2>
+    <p class="stars" id="winStars">★★★</p>
+    <p id="winText">You cleared the jam.</p>
+    <div class="modal-actions">
+      <button class="btn" id="replayBtn" type="button">↻ Replay</button>
+      <button class="btn primary" id="nextBtn" type="button">Next level →</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="levelsModal" aria-labelledby="levelsTitle">
+    <h2 id="levelsTitle">Levels</h2>
+    <p class="levels-note" id="levelsNote"></p>
+    <div class="level-grid" id="levelGrid"></div>
+    <div class="modal-actions">
+      <button class="btn" id="closeLevelsBtn" type="button">Close</button>
+    </div>
+  </dialog>
+
+  <script src="levels.js?v=1"></script>
+  <script src="game.js?v=1"></script>
+</body>
+</html>
