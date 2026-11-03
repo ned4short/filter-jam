@@ -274,6 +274,18 @@
     if (el.levelsModal.showModal) el.levelsModal.showModal(); else el.levelsModal.setAttribute("open", "");
   }
 
+  function share() {
+    var data = { title: "Filter Jam", text: "I'm on level " + (S.level + 1) + " of Filter Jam. Can you get the NED box out of the van?", url: "https://filterjam.nedwebservices.com/" };
+    if (navigator.share) { navigator.share(data).catch(function () {}); return; }
+    try {
+      navigator.clipboard.writeText(data.text + " " + data.url).then(
+        function () { el.status.textContent = "Link copied. Share it with a friend!"; },
+        function () { el.status.textContent = "Share this link: " + data.url; });
+    } catch (e) { el.status.textContent = "Share this link: " + data.url; }
+  }
+  var shareBtn = $("shareBtn");
+  if (shareBtn) shareBtn.addEventListener("click", share);
+
   el.undo.addEventListener("click", undo);
   el.restart.addEventListener("click", function () { startLevel(S.level); });
   el.hint.addEventListener("click", hint);
